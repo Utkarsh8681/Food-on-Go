@@ -36,6 +36,10 @@ class HomeFragment : Fragment() {
         val adapter =PopularAdapter(ArrayList(foodName) ,ArrayList(PopularPrice), ArrayList(imagePopular))
         binding.popularRecyclerView.layoutManager =LinearLayoutManager(requireContext())
         binding.popularRecyclerView.adapter = adapter
+        binding.viewMenu.setOnClickListener {
+            val bottomSheetDialog = BottomSheetFragment()
+            bottomSheetDialog.show(parentFragmentManager,"test")
+        }
         return binding.root
     }
 
