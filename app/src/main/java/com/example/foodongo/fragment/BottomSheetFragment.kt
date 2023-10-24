@@ -1,12 +1,10 @@
 package com.example.foodongo.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.example.foodongo.Adapter.MenuAdapter
 import com.example.foodongo.R
 import com.example.foodongo.databinding.FragmentBottomSheetBinding
@@ -49,7 +47,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             R.drawable.menu5,
             R.drawable.menu6,
         )
-        val adapter  = MenuAdapter(ArrayList(menuFoodName),ArrayList(menuFoodPrice),ArrayList(menuImage))
+        val adapter  = MenuAdapter(ArrayList(menuFoodName),ArrayList(menuFoodPrice),ArrayList(menuImage),requireContext())
         binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.menuRecyclerView.adapter = adapter
 

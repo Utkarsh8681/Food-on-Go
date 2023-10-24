@@ -1,5 +1,6 @@
 package com.example.foodongo.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodongo.Adapter.CartAdapter
+import com.example.foodongo.PayoutActivity
 import com.example.foodongo.R
 import com.example.foodongo.databinding.FragmentCartBinding
 import com.example.foodongo.databinding.FragmentHomeBinding
@@ -45,6 +47,10 @@ class CartFragment : Fragment() {
          binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.cartRecyclerView.adapter = adapter
 
+        binding.proceedBtn.setOnClickListener {
+            val intent = Intent(requireContext(),PayoutActivity::class.java)
+            startActivity(intent)
+        }
           return binding.root
     }
 

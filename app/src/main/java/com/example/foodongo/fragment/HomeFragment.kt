@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView.ScaleType
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodongo.Adapter.PopularAdapter
@@ -33,7 +34,7 @@ class HomeFragment : Fragment() {
         val PopularPrice = listOf("$5","$7","$1","$10")
         val imagePopular = listOf(R.drawable.menu1,R.drawable.menu4,R.drawable.menu3,R.drawable.menu2)
 
-        val adapter =PopularAdapter(ArrayList(foodName) ,ArrayList(PopularPrice), ArrayList(imagePopular))
+        val adapter =PopularAdapter(ArrayList(foodName) ,ArrayList(PopularPrice), ArrayList(imagePopular),requireContext())
         binding.popularRecyclerView.layoutManager =LinearLayoutManager(requireContext())
         binding.popularRecyclerView.adapter = adapter
         binding.viewMenu.setOnClickListener {
@@ -41,6 +42,16 @@ class HomeFragment : Fragment() {
             bottomSheetDialog.show(parentFragmentManager,"test")
         }
         return binding.root
+
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+//        val imageList  = ArrayList<SlideModel>()
+//        imageList.add(SlideModel(R.drawable.banner1, ScaleType.FIT_CENTER))
+//        imageList.add(SlideModel(R.drawable.banner1, ScaleType.FIT_CENTER))
+//        imageList.add(SlideModel(R.drawable.banner1, ScaleType.FIT_CENTER))
+//        val imageSlide= binding.i
     }
 
     companion object {
