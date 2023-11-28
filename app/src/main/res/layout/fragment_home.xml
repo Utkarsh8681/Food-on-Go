@@ -28,6 +28,12 @@
 <!--            app:iss_delay="1000"-->
 <!--            app:iss_text_align="CENTER"-->
 <!--            />-->
+<!--        <com.custom.sliderimage.logic.SliderImage-->
+<!--            android:id="@+id/slider"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+
+<!--            />-->
     </androidx.cardview.widget.CardView>
 
     <TextView
