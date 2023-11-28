@@ -4,25 +4,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView.ScaleType
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.foodongo.Adapter.MenuAdapter
-import com.example.foodongo.Model.MenuItem
+import com.example.foodongo.Adapter.PopularAdapter
 import com.example.foodongo.R
 import com.example.foodongo.databinding.FragmentHomeBinding
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 
 
 @Suppress("UNREACHABLE_CODE")
 class HomeFragment : Fragment() {
     private lateinit var  binding: FragmentHomeBinding
-    private lateinit var database: FirebaseDatabase
-    private lateinit var menuItems: MutableList<MenuItem>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,57 +29,21 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater,container,false)
 
+
+        val foodName  = listOf("burgar","flies","momoz","pixxa")
+        val PopularPrice = listOf("$5","$7","$1","$10")
+        val imagePopular = listOf(R.drawable.menu1,R.drawable.menu4,R.drawable.menu3,R.drawable.menu2)
+
+        val adapter =PopularAdapter(ArrayList(foodName) ,ArrayList(PopularPrice), ArrayList(imagePopular),requireContext())
+        binding.popularRecyclerView.layoutManager =LinearLayoutManager(requireContext())
+        binding.popularRecyclerView.adapter = adapter
         binding.viewMenu.setOnClickListener {
             val bottomSheetDialog = BottomSheetFragment()
             bottomSheetDialog.show(parentFragmentManager,"test")
         }
-        retrieveAndDisplayPopularItem()
         return binding.root
 
     }
-
-    private fun retrieveAndDisplayPopularItem() {
-        database = FirebaseDatabase.getInstance()
-
-        val foodRef:DatabaseReference = database.reference.child("menu")
-        menuItems = mutableListOf()
-
-//        retrieve
-        foodRef.addListenerForSingleValueEvent(object : ValueEventListener{
-            override fun onDataChange(snapshot: DataSnapshot) {
-                for (foodSnapshot in snapshot.children){
-                    val menuItem = foodSnapshot.getValue(MenuItem::class.java)
-                    menuItem?.let { menuItems.add(it) }
-
-                    randomPopularItem()
-                }
-
-            }
-
-            private fun randomPopularItem() {
-//                creat shiflr
-                val index = menuItems.indices.toList().shuffled()
-                val numItem = 6
-                val subsetMenuItem = index.take(numItem).map { menuItems[it] }
-
-                setPopularItemsAdapter(subsetMenuItem)
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-
-        })
-
-    }
-
-    private fun setPopularItemsAdapter(subsetMenuItem: List<MenuItem>) {
-        val adapter = MenuAdapter(subsetMenuItem,requireContext())
-        binding.popularRecyclerView.layoutManager =LinearLayoutManager(requireContext())
-        binding.popularRecyclerView.adapter = adapter
-
-    }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -96,8 +52,9 @@ class HomeFragment : Fragment() {
 //        imageList.add(SlideModel(R.drawable.banner1, ScaleType.FIT_CENTER))
 //        imageList.add(SlideModel(R.drawable.banner1, ScaleType.FIT_CENTER))
 //        val imageSlide= binding.i
-
     }
 
+    companion object {
 
+    }
 }

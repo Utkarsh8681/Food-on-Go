@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/signin_email"
+        android:id="@+id/editTextText"
         android:layout_width="325dp"
         android:layout_height="57dp"
 
@@ -69,11 +69,11 @@
         android:hint="Email or Phone Number"
         android:inputType="text"
         android:padding="16dp"
-        app:layout_constraintStart_toStartOf="@+id/Signin_name"
-        app:layout_constraintTop_toBottomOf="@+id/Signin_name" />
+        app:layout_constraintStart_toStartOf="@+id/editTextText4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText4" />
 
     <EditText
-        android:id="@+id/siignin_pass"
+        android:id="@+id/editTextText2"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"
@@ -84,9 +84,9 @@
         android:hint="Password"
         android:inputType="text"
         android:padding="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/signin_email"
-        app:layout_constraintStart_toStartOf="@+id/signin_email"
-        app:layout_constraintTop_toBottomOf="@+id/signin_email" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextText"
+        app:layout_constraintStart_toStartOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
     <TextView
         android:id="@+id/textView8"
@@ -95,10 +95,10 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/yeonsung_regular"
         android:text="or"
-        app:layout_constraintEnd_toEndOf="@+id/siignin_pass"
+        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/siignin_pass"
-        app:layout_constraintTop_toBottomOf="@+id/siignin_pass" />
+        app:layout_constraintStart_toStartOf="@+id/editTextText2"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
 
     <TextView
         android:id="@+id/textView9"
@@ -113,7 +113,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Googlebutton"
+        android:id="@+id/button"
         android:layout_width="152dp"
         android:layout_height="57dp"
         android:layout_marginLeft="12dp"
@@ -141,7 +141,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/Googlebutton"
+        app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -155,7 +155,7 @@ android:textColor="@color/white"
         android:fontFamily="@font/yeonsung_regular"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/Googlebutton"
+        app:layout_constraintStart_toStartOf="@+id/button"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
@@ -170,7 +170,7 @@ android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/signup" />
 
     <EditText
-        android:id="@+id/Signin_name"
+        android:id="@+id/editTextText4"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="8dp"

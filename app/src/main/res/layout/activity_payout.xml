@@ -101,7 +101,7 @@
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/totalPrice"
+            android:id="@+id/price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -177,7 +177,7 @@ for previewing layouts and visual "
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <TextView
-            android:id="@+id/paymentDetails"
+            android:id="@+id/ProfileEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
