@@ -209,9 +209,7 @@ ut labore et dolore magna aliqua. Ut enim ad "
         android:background="@color/white"
         android:hint="Noddle
 Salad
-Burger
-Herbal Pan Cake
-Momos"
+Burger"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toStartOf="parent"
