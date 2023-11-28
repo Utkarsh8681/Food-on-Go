@@ -52,7 +52,7 @@
         app:srcCompat="@drawable/arrow_left" />
 
     <TextView
-        android:id="@+id/textView24"
+        android:id="@+id/detailDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView6" />
 
     <TextView
-        android:id="@+id/textView25"
+        android:id="@+id/detalDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
@@ -76,8 +76,8 @@ sed do eiusmod tempor incididunt
 ut labore et dolore magna aliqua. Ut enim ad "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView24"
-        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+        app:layout_constraintStart_toStartOf="@+id/detailDescription"
+        app:layout_constraintTop_toBottomOf="@+id/detailDescription" />
 
     <TextView
         android:id="@+id/textView26"
@@ -90,11 +90,11 @@ ut labore et dolore magna aliqua. Ut enim ad "
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView25"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+        app:layout_constraintStart_toStartOf="@+id/detalDescription"
+        app:layout_constraintTop_toBottomOf="@+id/detalDescription" />
 
     <TextView
-        android:id="@+id/textView27"
+        android:id="@+id/detailIngridients"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="contrnt 1\nfghjk\nfghjk"
@@ -102,6 +102,7 @@ ut labore et dolore magna aliqua. Ut enim ad "
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addToCart"
         android:layout_width="157dp"
         android:layout_height="57dp"
         android:layout_marginTop="36dp"
@@ -112,6 +113,6 @@ ut labore et dolore magna aliqua. Ut enim ad "
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
+        app:layout_constraintTop_toBottomOf="@+id/detailIngridients" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

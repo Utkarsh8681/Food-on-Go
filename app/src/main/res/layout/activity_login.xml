@@ -58,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/login_pass"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="7dp"
@@ -66,13 +66,14 @@
         android:drawableLeft="@drawable/lock"
         android:drawablePadding="6dp"
         android:ems="10"
+        android:elevation="5dp"
         android:hint="Password"
         android:inputType="text"
         android:padding="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText3"
+        app:layout_constraintEnd_toEndOf="@+id/login_email"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextText3"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
+        app:layout_constraintStart_toStartOf="@+id/login_email"
+        app:layout_constraintTop_toBottomOf="@+id/login_email" />
 
     <TextView
         android:id="@+id/textView8"
@@ -81,10 +82,10 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/yeonsung_regular"
         android:text="or"
-        app:layout_constraintEnd_toEndOf="@+id/editTextText2"
+        app:layout_constraintEnd_toEndOf="@+id/login_pass"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/editTextText2"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintStart_toStartOf="@+id/login_pass"
+        app:layout_constraintTop_toBottomOf="@+id/login_pass" />
 
     <TextView
         android:id="@+id/textView9"
@@ -99,7 +100,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button"
+        android:id="@+id/Goglebutton"
         android:layout_width="152dp"
         android:layout_height="57dp"
         android:layout_marginLeft="12dp"
@@ -127,7 +128,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/Goglebutton"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -141,8 +142,8 @@
         android:textColor="@color/white"
         android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="@+id/button2"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="@+id/Goglebutton"
+        app:layout_constraintTop_toBottomOf="@+id/Goglebutton" />
 
     <TextView
         android:id="@+id/dontAccount"
@@ -157,7 +158,7 @@
         app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <EditText
-        android:id="@+id/editTextText3"
+        android:id="@+id/login_email"
         android:layout_width="325dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
@@ -165,6 +166,7 @@
         android:drawableLeft="@drawable/user"
         android:drawablePadding="6dp"
         android:ems="10"
+        android:elevation="5dp"
         android:hint="Email or Phone Number"
         android:inputType="text"
         android:padding="16dp"
