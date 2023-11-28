@@ -83,10 +83,8 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="NameLorem ipsum is placeholder text
-commonly used in the graphic,
-print, and publishing industries
-for previewing layouts and visual "
+            android:hint="NameLorem ipsum is
+ "
             android:inputType="textMultiLine" />
 
 

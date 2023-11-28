@@ -61,8 +61,6 @@ class CartFragment : Fragment() {
         binding.proceedBtn.setOnClickListener {
 
             getOrderDetails()
-            val intent = Intent(requireContext(), PayoutActivity::class.java)
-            startActivity(intent)
         }
         return binding.root
     }
@@ -172,7 +170,7 @@ class CartFragment : Fragment() {
     }
 
     private fun setAdapter() {
-        val adapter = CartAdapter(
+        cartAdapter = CartAdapter(
             requireContext(),
             foodNames,
             foodPrice,
@@ -183,7 +181,7 @@ class CartFragment : Fragment() {
         )
         binding.cartRecyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        binding.cartRecyclerView.adapter = adapter
+        binding.cartRecyclerView.adapter = cartAdapter
     }
 
 
