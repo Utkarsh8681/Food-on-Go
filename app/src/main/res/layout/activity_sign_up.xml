@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login.SignUpActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="91dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:fontFamily="@font/yeonsung_regular"
+        android:text="Food On Go"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <ImageButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_left" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="Create New User Admin"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <EditText
+        android:id="@+id/useName"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/input_shape"
+        android:drawableLeft="@drawable/user"
+        android:drawablePadding="7dp"
+        android:elevation="3dp"
+        android:ems="10"
+        android:hint="User name"
+        android:inputType="text"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <EditText
+        android:id="@+id/restaurentName"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/input_shape"
+        android:drawableLeft="@drawable/home"
+        android:drawablePadding="7dp"
+        android:elevation="3dp"
+        android:ems="10"
+        android:padding="12dp"
+        android:inputType="text"
+        android:hint="Name of Restaurant"
+        app:layout_constraintEnd_toEndOf="@+id/useName"
+        app:layout_constraintStart_toStartOf="@+id/useName"
+        app:layout_constraintTop_toBottomOf="@+id/useName" />
+
+    <EditText
+        android:id="@+id/emailorphone"
+        android:padding="12dp"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/input_shape"
+        android:drawableLeft="@drawable/mail"
+        android:drawablePadding="7dp"
+        android:elevation="3dp"
+        android:ems="10"
+        android:inputType="textWebEmailAddress"
+        android:hint="Email or Phone Number"
+        app:layout_constraintEnd_toEndOf="@+id/restaurentName"
+        app:layout_constraintStart_toStartOf="@+id/restaurentName"
+        app:layout_constraintTop_toBottomOf="@+id/restaurentName" />
+
+    <EditText
+        android:id="@+id/signPassword"
+        android:layout_width="325dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/input_shape"
+        android:drawableLeft="@drawable/lock"
+        android:drawablePadding="7dp"
+        android:elevation="3dp"
+        android:ems="10"
+        android:padding="12dp"
+        android:inputType="textPassword"
+        android:hint="Password"
+        app:layout_constraintEnd_toEndOf="@+id/emailorphone"
+        app:layout_constraintStart_toStartOf="@+id/emailorphone"
+        app:layout_constraintTop_toBottomOf="@+id/emailorphone" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/SignUp_btn"
+        android:layout_width="152dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/login_btn"
+        android:fontFamily="@font/yeonsung_regular"
+        android:text="Create Account"
+        android:textColor="@color/white"
+
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/signPassword"
+        app:layout_constraintStart_toStartOf="@+id/signPassword"
+        app:layout_constraintTop_toBottomOf="@+id/signPassword" />
+
+    <TextView
+        android:id="@+id/Already_have"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have account?"
+        android:textColor="@color/green"
+        android:layout_marginTop="5dp"
+        android:textSize="13dp"
+        android:fontFamily="@font/yeonsung_regular"
+        app:layout_constraintEnd_toEndOf="@+id/SignUp_btn"
+        app:layout_constraintStart_toStartOf="@+id/SignUp_btn"
+        app:layout_constraintTop_toBottomOf="@+id/SignUp_btn" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/yeonsung_regular"
+        android:text="Design By \n Utkarsh"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

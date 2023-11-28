@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "100110732933",
+    "project_id": "admin-on-go",
+    "storage_bucket": "admin-on-go.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100110732933:android:c89deb01b5a869a62723ec",
+        "android_client_info": {
+          "package_name": "com.example.adminongo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp2OICGT4jRw1iEk6HjiMTJ_MbJMymC6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

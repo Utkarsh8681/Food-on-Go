@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Admin on Go</string>
+    <string name="default_web_client_id" translatable="false"></string>
+</resources>
