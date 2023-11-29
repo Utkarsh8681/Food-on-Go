@@ -91,6 +91,7 @@ companion object{
         private fun decreaseQuantity(position: Int) {
             if (itemQuantities[position] > 1) {
                 itemQuantities[position]--
+                CartQuantity[position] = itemQuantities[position]
                 binding.itemCount.text = itemQuantities[position].toString()
             }
 
@@ -99,6 +100,7 @@ companion object{
         private fun increaseQuantity(position: Int) {
             if (itemQuantities[position] < 10) {
                 itemQuantities[position]++
+                CartQuantity[position]= itemQuantities[position]
                 binding.itemCount.text = itemQuantities[position].toString()
             }
 

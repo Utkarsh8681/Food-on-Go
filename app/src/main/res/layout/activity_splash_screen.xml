@@ -54,7 +54,7 @@
         android:layout_marginStart="173dp"
         android:layout_marginEnd="181dp"
         android:layout_marginBottom="32dp"
-        android:text="Design By \n Utkarsh"
+        android:text="Design By \nUtkarsh"
         android:textAlignment="center"
         android:textColor="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"

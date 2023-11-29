@@ -25,7 +25,7 @@
         android:layout_marginTop="48dp"
         android:fontFamily="@font/yeonsung_regular"
         android:gravity="center_horizontal"
-        android:text="Edit"
+        android:text="Order Details"
         android:textColor="@color/black"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
             android:fontFamily="@font/yeonsung_regular"
             android:text="Name"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="22dp" />
 
         <EditText
             android:id="@+id/name"
@@ -98,9 +98,9 @@
             android:fontFamily="@font/yeonsung_regular"
             android:text="Total Ammount"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="22dp" />
 
-        <EditText
+        <TextView
             android:id="@+id/totalPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,7 +110,6 @@
             android:ems="10"
             android:gravity="end"
             android:inputType="text"
-            android:text="$35"
             android:textColor="@color/green"
             android:textSize="19dp" />
 
@@ -143,7 +142,7 @@
             android:fontFamily="@font/yeonsung_regular"
             android:text="Address"
             android:textColor="@color/black"
-            android:textSize="20dp" />
+            android:textSize="22dp" />
 
         <EditText
             android:id="@+id/address"
@@ -153,10 +152,7 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:ems="10"
-            android:hint="NameLorem ipsum is placeholder text
-commonly used in the graphic,
-print, and publishing industries
-for previewing layouts and visual "
+            android:hint="NameLorem ipsum is psdf"
             android:inputType="textMultiLine" />
 
 
@@ -167,6 +163,7 @@ for previewing layouts and visual "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginRight="12dp"
         android:background="@drawable/profile_editshape"
         android:elevation="2dp"
@@ -184,7 +181,7 @@ for previewing layouts and visual "
             android:layout_marginLeft="12dp"
             android:layout_weight="1"
             android:fontFamily="@font/yeonsung_regular"
-            android:hint="Payment Method"
+            android:text="Payment Method"
             android:textColor="@color/black"
             android:textSize="20dp" />
 

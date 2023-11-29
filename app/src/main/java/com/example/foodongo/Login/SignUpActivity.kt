@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.foodongo.FrontActivity
@@ -18,6 +19,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.auth.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.database
 
@@ -41,11 +43,13 @@ class SignUpActivity : AppCompatActivity() {
 
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id)).requestEmail().build()
-        auth = FirebaseAuth.getInstance()
+        auth = Firebase.auth
         database = Firebase.database.reference
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
+
+
         binding.signup.setOnClickListener {
-            val email = binding.signinEmail.text.toString()
+            val email = binding.signinEmail.text.toString().trim()
             val name = binding.SigninName.text.toString()
             val password = binding.siigninPass.text.toString()
             if (email.isEmpty() || name.isEmpty() || password.isEmpty()) {
@@ -60,9 +64,10 @@ class SignUpActivity : AppCompatActivity() {
                         } else {
                             Toast.makeText(
                                 this,
-                                "Sign in  Failed : ${task.exception?.message}",
+                                "Sign up  Failed : ${task.exception?.message}",
                                 Toast.LENGTH_SHORT
                             ).show()
+                            Log.d("Account","createAccount : faliurew:",task.exception)
                         }
 
                     }
@@ -94,6 +99,7 @@ class SignUpActivity : AppCompatActivity() {
                             finish()
                         } else {
                             Toast.makeText(this, "Sign In failed!", Toast.LENGTH_SHORT).show()
+
                         }
 
                     }
