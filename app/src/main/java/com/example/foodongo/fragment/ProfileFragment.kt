@@ -46,6 +46,23 @@ class ProfileFragment : Fragment() {
         }
 
         setUserData()
+        binding.apply {
+            name.isEnabled = false
+            email.isEnabled = false
+            phone.isEnabled = false
+            address.isEnabled = false
+        }
+
+        binding.editProfile.setOnClickListener {
+            binding.apply {
+                name.isEnabled = true
+                email.isEnabled = true
+                phone.isEnabled = true
+                address.isEnabled = true
+            }
+        }
+
+
         return binding.root
     }
 

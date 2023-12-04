@@ -12,8 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-
-
         android:text="Recent Items"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/recentBuy"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginStart="8dp"
@@ -34,48 +32,50 @@
         app:layout_constraintTop_toBottomOf="@+id/textView18">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recentBoughtItem"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/buyAgainImage"
                 android:layout_width="62dp"
                 android:layout_height="64dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/menu7"
-                android:layout_marginBottom="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/preName"
+                android:id="@+id/buyAgainName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
+                android:fontFamily="@font/yeonsung_regular"
                 android:text="Fruit Salad"
                 android:textSize="15dp"
-                android:fontFamily="@font/yeonsung_regular"
 
-                app:layout_constraintStart_toEndOf="@+id/imageView5"
+                app:layout_constraintStart_toEndOf="@+id/buyAgainImage"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/prePrice"
+                android:id="@+id/BuyAgainPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="$35"
                 android:fontFamily="@font/yeonsung_regular"
-                android:textSize="19dp"
+                android:text="$35"
                 android:textColor="@color/green"
+                android:textSize="19dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/preName"
-                app:layout_constraintTop_toBottomOf="@+id/preName" />
+                app:layout_constraintStart_toStartOf="@+id/buyAgainName"
+                app:layout_constraintTop_toBottomOf="@+id/buyAgainName" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/status"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
@@ -100,12 +100,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView3" />
+        app:layout_constraintTop_toBottomOf="@+id/recentBuy" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="409dp"
         android:layout_height="0dp"
         android:id="@+id/historyRecycle"
+        tools:listitem="@layout/previous_buy"
         android:layout_marginStart="1dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"

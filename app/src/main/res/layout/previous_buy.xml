@@ -39,10 +39,11 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/prePrice"
+                android:id="@+id/BuyAgainPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
                 android:fontFamily="@font/yeonsung_regular"
                 android:text="$5"
                 android:textColor="@color/green"

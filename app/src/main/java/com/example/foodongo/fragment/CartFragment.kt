@@ -138,9 +138,10 @@ class CartFragment : Fragment() {
 //        list to stire itrems
         foodNames = mutableListOf()
         foodPrice = mutableListOf()
+        foodImageUri = mutableListOf()
         foodDescription = mutableListOf()
         foodIngridients = mutableListOf()
-        foodImageUri = mutableListOf()
+
         foodIngridients = mutableListOf()
         quantity = mutableListOf()
 
@@ -153,8 +154,8 @@ class CartFragment : Fragment() {
 
                     cartItems?.foodName?.let { foodNames.add(it) }
                     cartItems?.foodPrice?.let { foodPrice.add(it) }
-                    cartItems?.foodDescription?.let { foodDescription.add(it) }
                     cartItems?.foodImage?.let { foodImageUri.add(it) }
+                    cartItems?.foodDescription?.let { foodDescription.add(it) }
                     cartItems?.foodQuantity?.let { quantity.add(it) }
                     cartItems?.foodIngridient?.let { foodIngridients.add(it) }
                 }

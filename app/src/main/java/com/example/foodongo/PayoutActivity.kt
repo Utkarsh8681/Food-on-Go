@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Toast
+import com.example.foodongo.Model.OrderDetails
 import com.example.foodongo.databinding.ActivityPayoutBinding
 import com.google.android.play.core.integrity.i
 import com.google.firebase.auth.FirebaseAuth
@@ -56,8 +58,18 @@ class PayoutActivity : AppCompatActivity() {
 
 
         binding.placeOrder.setOnClickListener {
-            val bottomSheetDialogFragment = congratulationsFragment()
-            bottomSheetDialogFragment.show(supportFragmentManager, "Test")
+
+            name = binding.name.text.toString().trim()
+            address = binding.address.text.toString().trim()
+            phone = binding.phone.text.toString().trim()
+            if(name.isBlank()||phone.isBlank()||address.isBlank()){
+                   Toast.makeText(this, "Please Fill all the details🥲", Toast.LENGTH_SHORT).show()
+               }
+            else{
+                placeOrder()
+               }
+//        removeItemFromCart()
+
 
         }
         binding.backBtn2.setOnClickListener {
@@ -65,6 +77,40 @@ class PayoutActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun removeItemFromCart() {
+
+        val cartItems =databaseReference.child("user").child(userId).child("catItems")
+        cartItems.removeValue()
+}
+
+    private fun placeOrder() {
+
+        userId = auth.currentUser?.uid?:""
+        val time = System.currentTimeMillis()
+        val itemPushKey = databaseReference.child("OrderDetals").push().key
+        val orderDetail = OrderDetails(userId,name,foodName,foodImage,foodPrice,foodQuantity,address,phone,totalAmount,time,itemPushKey,false,false)
+        val orderReference = databaseReference.child("OrderDetails").child(itemPushKey!!)
+        orderReference.setValue(orderDetail).addOnSuccessListener {
+            val bottomSheetDialogFragment = congratulationsFragment()
+            bottomSheetDialogFragment.show(supportFragmentManager, "Test")
+            removeItemFromCart()
+           addOrderToHistory(orderDetail)
+        }
+            .addOnFailureListener {
+                Toast.makeText(this, "failed to place order😒", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun addOrderToHistory(orderDetail: OrderDetails) {
+
+        databaseReference.child("user").child(userId).child("BuyHistory")
+            .child(orderDetail.itemPushKey!!)
+            .setValue(orderDetail).addOnSuccessListener {
+
+            }
+    }
+
 
     private fun calculateTotalAmmount(): Int{
 

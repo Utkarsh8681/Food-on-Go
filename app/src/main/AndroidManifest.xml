@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,19 +15,18 @@
         android:theme="@style/Theme.FoodOnGo"
         tools:targetApi="31">
         <activity
+            android:name=".RecentOrderItem"
+            android:exported="false" />
+        <activity
             android:name=".DetailsActivity"
-            android:exported="true" >
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".PayoutActivity"
             android:exported="false" />
         <activity
             android:name=".FrontActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan" >
-
-        </activity>
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name=".Login.locationActivity"
             android:exported="false" />

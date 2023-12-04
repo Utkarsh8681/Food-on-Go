@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodongo.Adapter.MenuAdapter
 import com.example.foodongo.Model.MenuItem
-import com.example.foodongo.R
 import com.example.foodongo.databinding.FragmentHomeBinding
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

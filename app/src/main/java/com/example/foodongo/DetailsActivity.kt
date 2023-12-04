@@ -31,7 +31,7 @@ class DetailsActivity : AppCompatActivity() {
 
         with(binding){
             detailFoodName.text =foodName
-            detailDescription.text = description
+            detalDescription.text = description
             detailIngridients.text = ingridients
             Glide.with(this@DetailsActivity).load(Uri.parse(foodImage)).into(detailFoodImage)
 
@@ -52,7 +52,7 @@ class DetailsActivity : AppCompatActivity() {
 
     private fun addItemToCart() {
         val database = FirebaseDatabase.getInstance().reference
-        val userId = auth.currentUser?.uid
+        val userId = auth.currentUser?.uid?:""
 
 //        create a cart items object
         val cartItem = Cart(foodName.toString(),foodPrice.toString(),description.toString(),foodImage.toString(),ingridients.toString() ,1)
