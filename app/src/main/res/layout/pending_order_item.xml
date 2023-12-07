@@ -58,8 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/yeonsung_regular"
-                android:text="Quantity"
-
+                android:text="Total Pay"
                 android:textSize="16dp"
                 app:layout_constraintEnd_toEndOf="@+id/itemName"
                 app:layout_constraintHorizontal_bias="0.0"

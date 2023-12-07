@@ -22,20 +22,21 @@ class AddItemsActivity : AppCompatActivity() {
     private val binding: ActivityAddItemsBinding by lazy {
         ActivityAddItemsBinding.inflate(layoutInflater)
     }
-private lateinit var auth: FirebaseAuth
-private lateinit var database: FirebaseDatabase
-private lateinit var foodName : String
-private lateinit var foodPrice : String
-private var  foodImageUri : Uri ?= null
-private lateinit var description : String
-private lateinit var ingridients : String
+    private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
+    private lateinit var foodName: String
+    private lateinit var foodPrice: String
+    private var foodImageUri: Uri? = null
+    private lateinit var description: String
+    private lateinit var ingridients: String
+
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+//iinitializing firebase database
         auth = FirebaseAuth.getInstance()
-        database  = FirebaseDatabase.getInstance()
+        database = FirebaseDatabase.getInstance()
 
         binding.backBtn.setOnClickListener {
             finish()
@@ -46,7 +47,7 @@ private lateinit var ingridients : String
         }
     }
 
-   private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
+    private val pickImage = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         if (uri != null) {
             binding.addedImage.setImageURI(uri)
             foodImageUri = uri
@@ -56,17 +57,15 @@ private lateinit var ingridients : String
         }
 
         binding.addItem.setOnClickListener {
-        foodName = binding.addFoodname.text.toString()
-        foodPrice = binding.addFoodPrice.text.toString()
-        description = binding.shortDescription.text.toString()
-        ingridients = binding.Ingridients.text.toString()
-
-            if(!(foodName.isBlank()||foodPrice.isBlank()|| ingridients.isBlank()||description.isBlank())){
+            foodName = binding.addFoodname.text.toString()
+            foodPrice = binding.addFoodPrice.text.toString()
+            description = binding.shortDescription.text.toString()
+            ingridients = binding.Ingridients.text.toString()
+            if (!(foodName.isBlank() || foodPrice.isBlank() || ingridients.isBlank() || description.isBlank())) {
                 uploadData()
                 Toast.makeText(this, "Item added Sucessfully", Toast.LENGTH_SHORT).show()
                 finish()
-            }
-            else{
+            } else {
                 Toast.makeText(this, "Fill all Fields", Toast.LENGTH_SHORT).show()
             }
         }
@@ -112,8 +111,7 @@ private lateinit var ingridients : String
                 }
 
 
-        }
-        else{
+        } else {
             Toast.makeText(this, "Please Select a Image", Toast.LENGTH_SHORT).show()
 
         }
