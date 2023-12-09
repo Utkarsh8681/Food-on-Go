@@ -99,7 +99,7 @@ val chilItemPushKey = listOfOrderItems[position].itemPushKey
         val clickItemOrderReference = chilItemPushKey?.let {
             database.reference.child("OrderDetails").child(it)
         }
-clickItemOrderReference?.child("AcceptOrder")?.setValue(true)
+clickItemOrderReference?.child("orderAccepted")?.setValue(true)
         updateOrderAcceptStatus(position)
     }
 
@@ -134,8 +134,8 @@ clickItemOrderReference?.child("AcceptOrder")?.setValue(true)
         val userIdofClickeditem = listOfOrderItems[position].userUid
         val pushKeyOfClickedItem = listOfOrderItems[position].itemPushKey
         val buyHistoryReference = database.reference.child("user").child(userIdofClickeditem!!).child("BuyHistory").child(pushKeyOfClickedItem!!)
-        buyHistoryReference.child("AcceptOrder")
-        databaseOrderDetails.child(pushKeyOfClickedItem).child("AcceptOrder").setValue(true)
+        buyHistoryReference.child("orderAccepted").setValue(true)
+        databaseOrderDetails.child(pushKeyOfClickedItem).child("orderAccepted").setValue(true)
 
     }
 }

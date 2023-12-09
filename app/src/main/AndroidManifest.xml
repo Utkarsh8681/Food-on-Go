@@ -43,7 +43,10 @@
             android:exported="false" />
         <activity
             android:name=".SplashScrrenActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

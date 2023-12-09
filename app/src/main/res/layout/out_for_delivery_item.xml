@@ -56,7 +56,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
-                app:cardBackgroundColor="#4AFF5C"
+                app:cardBackgroundColor="#D81414"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/textView29"
                 app:layout_constraintStart_toStartOf="@+id/textView29"
