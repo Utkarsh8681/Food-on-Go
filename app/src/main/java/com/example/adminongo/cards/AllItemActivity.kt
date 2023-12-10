@@ -4,6 +4,7 @@ import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adminongo.adapter.MenuItemAdapter
 import com.example.adminongo.databinding.ActivityAllItemBinding
@@ -58,9 +59,30 @@ class AllItemActivity : AppCompatActivity() {
     }
 
     private fun setAdapter() {
-        val adapter = MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference)
+        val adapter = MenuItemAdapter(this@AllItemActivity,menuItems,databaseReference){position ->
+            deleteMenuItem(position)
+        }
         binding.AllItemeRecycle.layoutManager = LinearLayoutManager(this)
         binding.AllItemeRecycle.adapter = adapter
 
+    }
+
+    private fun deleteMenuItem(position: Int) {
+
+        val menuItemToDelete = menuItems[position]
+        val menuItemKey = menuItemToDelete.key
+
+        val foodMenuRefernce = database.reference.child("menu").child(menuItemKey!!)
+        foodMenuRefernce.removeValue().addOnCompleteListener {task ->
+            if(task.isSuccessful){
+                menuItems.removeAt(position)
+                binding.AllItemeRecycle.adapter?.notifyItemRemoved(position)
+
+            }
+            else{
+                Toast.makeText(this, "Item Not Removed", Toast.LENGTH_SHORT).show()
+            }
+
+        }
     }
 }

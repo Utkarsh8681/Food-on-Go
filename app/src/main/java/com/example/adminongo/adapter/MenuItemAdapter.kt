@@ -14,6 +14,7 @@ class MenuItemAdapter(
     private val context: Context,
     private val menuList: ArrayList<addItems>,
     databaseReference: DatabaseReference,
+    private val onDeleteClickListner :(position : Int) -> Unit
 //    private val ItemName: List<String>,
 //    private val Itemprice: ArrayList<String>,
 //    private val ItemImage: ArrayList<Int>
