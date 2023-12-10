@@ -1,7 +1,7 @@
 package com.example.foodongo.Model
 
 data class MenuItem(
-    val foodName :String ?= null,
+    var foodName :String ?= null,
     val foodPrice :String ?= null,
     val foodImage :String ?= null,
     val ingridients :String ?= null,

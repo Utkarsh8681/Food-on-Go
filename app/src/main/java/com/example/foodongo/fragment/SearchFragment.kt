@@ -3,9 +3,10 @@ package com.example.foodongo.fragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
+//import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import com.example.foodongo.Model.MenuItem
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodongo.Adapter.MenuAdapter
@@ -58,25 +59,28 @@ class SearchFragment : Fragment() {
 
             }
 
-            private fun showAllMenus() {
 
-                val filteredMenuItem = ArrayList(originalMenuItem)
-                setAdapter(filteredMenuItem)
-            }
 
             override fun onCancelled(error: DatabaseError) {
             }
 
         })
     }
+    private fun showAllMenus() {
 
-    private fun setAdapter(filteredMenuItem: ArrayList<MenuItem>) {
-//        adapter = MenuAdapter(filteredMenuItem, requireContext())
-        binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.menuRecyclerView.adapter = adapter
-
-
+        val filteredMenuItem = ArrayList(originalMenuItem)
+        setAdapter(filteredMenuItem)
     }
+
+    private fun setAdapter(filteredMenuItem: List<MenuItem>) {
+
+        adapter = MenuAdapter( filteredMenuItem , requireContext())
+        binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.menuRecyclerView.adapter= adapter
+    }
+
+
+
 
 
     private fun setupSearchView() {
@@ -97,10 +101,12 @@ class SearchFragment : Fragment() {
     }
 
     private fun filterMenuItems(query: String?) {
-//        val filteredMenuItems = originalMenuItem.filter {
-//            it.foodName?.contains(query, ignoreCase = true) == true
-//        }
-//        setAdapter(filteredMenuItems)
+        val filteredMenuItems = originalMenuItem.filter {
+            it.foodName?.contains(query!!, ignoreCase = true) == true
+        }
+        setAdapter(filteredMenuItems)
     }
+  companion object{
 
+  }
 }

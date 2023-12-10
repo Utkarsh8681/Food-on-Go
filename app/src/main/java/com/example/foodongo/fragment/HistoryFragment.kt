@@ -1,8 +1,10 @@
 package com.example.foodongo.fragment
 
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,14 +53,24 @@ class HistoryFragment : Fragment() {
         setPreviousDataInRecyclerView()
 
 
-        binding.recentBoughtItem.setOnClickListener {
-            seeItemsRecentBuy()
+//        binding.recentBoughtItem.setOnClickListener {
+//            seeItemsRecentBuy()
 
 //            startActivity(intent)
-
-
+        binding.updateStatus.setOnClickListener {
+            updateOrderStatus()
         }
+
+//        }
         return binding.root
+    }
+
+    private fun updateOrderStatus() {
+
+        val itemPushKey =  listOfOrderItem[0].itemPushKey
+        val completeOrderReference = database.reference.child("CompletedOrder").child(itemPushKey!!)
+        completeOrderReference.child("paymentReceived").setValue(true)
+
     }
 
     private fun seeItemsRecentBuy() {
@@ -114,6 +126,13 @@ class HistoryFragment : Fragment() {
                 val image = it.foodImages?.firstOrNull() ?: ""
                 val uri = Uri.parse(image)
                 Glide.with(requireContext()).load(uri).into(buyAgainImage)
+
+                val isOrderIsAccepted = listOfOrderItem[0].orderAccepted
+                Log.d("tag", "setUpDataInRecentBuy: $isOrderIsAccepted")
+                if(isOrderIsAccepted){
+                    status.background.setTint(Color.GREEN)
+                    updateStatus.visibility = View.VISIBLE
+                }
 
                 listOfOrderItem.reverse()
                 if (listOfOrderItem.isNotEmpty()) {
