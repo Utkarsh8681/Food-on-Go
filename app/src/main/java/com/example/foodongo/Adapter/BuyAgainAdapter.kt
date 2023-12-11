@@ -38,8 +38,9 @@ class BuyAgainAdapter(
             val uriString = foodImage
             val uri = Uri.parse(uriString)
             Glide.with(requireContext).load(uri).into(binding.preImage)
-
+binding.buyAgain.setOnClickListener {  }
         }
+
 
 
     }

@@ -61,6 +61,7 @@ class CartFragment : Fragment() {
         binding.proceedBtn.setOnClickListener {
 
             getOrderDetails()
+
         }
         return binding.root
     }
@@ -126,8 +127,8 @@ class CartFragment : Fragment() {
             intent.putExtra("foodQuantity", foodItemQuantities as ArrayList<Int>)
             intent.putExtra("foodIngridients", foodIngridients as ArrayList<String>)
             startActivity(intent)
-        }
 
+        }
     }
 
     private fun retrieveItems() {
@@ -141,7 +142,6 @@ class CartFragment : Fragment() {
         foodImageUri = mutableListOf()
         foodDescription = mutableListOf()
         foodIngridients = mutableListOf()
-
         foodIngridients = mutableListOf()
         quantity = mutableListOf()
 
@@ -175,8 +175,8 @@ class CartFragment : Fragment() {
             requireContext(),
             foodNames,
             foodPrice,
-            foodDescription,
             foodImageUri,
+            foodDescription,
             quantity,
             foodIngridients
         )

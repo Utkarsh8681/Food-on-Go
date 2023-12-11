@@ -59,6 +59,7 @@ class HistoryFragment : Fragment() {
 //            startActivity(intent)
         binding.updateStatus.setOnClickListener {
             updateOrderStatus()
+            binding.updateStatus.visibility = View.INVISIBLE
         }
 
 //        }

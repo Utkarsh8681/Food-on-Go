@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Recent Items"
-        android:textSize="15sp"
+        android:fontFamily="@font/yeonsung_regular"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,18 +37,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/updateStatus"
                 android:visibility="invisible"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/green"
+                android:layout_height="30dp"
+                android:background="@drawable/green_card"
+                android:fontFamily="@font/yeonsung_regular"
                 android:text="Received"
+                android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/status"
-                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.416"
                 app:layout_constraintStart_toStartOf="@+id/status"
-                app:layout_constraintTop_toBottomOf="@+id/status" />
+                app:layout_constraintTop_toBottomOf="@+id/status"
+                app:layout_constraintVertical_bias="0.545" />
 
             <ImageView
                 android:id="@+id/buyAgainImage"
@@ -91,15 +95,13 @@
                 android:id="@+id/status"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="28dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="40dp"
                 android:background="@drawable/green_card"
                 android:backgroundTint="#A1A5A3"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.227" />
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -109,7 +111,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="TextView"
+        android:text="Recents"
+        android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"

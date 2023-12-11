@@ -27,6 +27,7 @@ private lateinit var binding: FragmentCongratulationsBinding
         binding.gohome.setOnClickListener {
             val intent = Intent(requireContext(),FrontActivity::class.java)
             startActivity(intent)
+            dismiss()
         }
         return binding.root
     }

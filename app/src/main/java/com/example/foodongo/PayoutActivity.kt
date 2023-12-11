@@ -73,7 +73,7 @@ class PayoutActivity : AppCompatActivity() {
 
         }
         binding.backBtn2.setOnClickListener {
-
+            finish()
         }
 
     }
