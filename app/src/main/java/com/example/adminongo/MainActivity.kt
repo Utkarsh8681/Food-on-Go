@@ -42,10 +42,14 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+//        binding.profileActivity.setOnClickListener {
+//            val intent = Intent(this, AdminProfileActivity::class.java)
+//            startActivity(intent)
+//
+//        }
         binding.profileActivity.setOnClickListener {
             val intent = Intent(this, AdminProfileActivity::class.java)
             startActivity(intent)
-
         }
         binding.newUser.setOnClickListener {
             val intent = Intent(this, CreateNewProfileActivity::class.java)
@@ -111,12 +115,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun completedOrders() {
-        var pendingOrderCount = 0
+        var pendingOrderCount = 20
         var pendingOrderReference = database.reference.child("CompletedOrder")
         pendingOrderReference.addListenerForSingleValueEvent(object  : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 pendingOrderCount = snapshot.childrenCount.toInt()
-                binding.pendingCount.text = pendingOrderCount.toString()
+                binding.completedCount.text = pendingOrderCount.toString()
 
             }
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="339dp"
         android:layout_height="103dp"
         android:layout_margin="8dp"
         app:cardCornerRadius="15dp"
@@ -80,12 +80,12 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_marginTop="20dp"
+                android:background="@color/green"
                 android:src="@drawable/icon_minus"
                 android:textSize="18dp"
-                android:background="@color/green"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.51"
-                app:layout_constraintStart_toEndOf="@+id/foodname"
+                app:layout_constraintHorizontal_bias="0.247"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.appcompat.widget.AppCompatImageButton
@@ -120,6 +120,13 @@
                 app:layout_constraintStart_toStartOf="@+id/minusBtn"
                 app:layout_constraintTop_toBottomOf="@+id/quantityView"
                 app:srcCompat="@drawable/trash" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="212dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>

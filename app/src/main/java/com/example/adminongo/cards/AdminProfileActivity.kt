@@ -28,18 +28,21 @@ class AdminProfileActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        binding.saveInfo.setOnClickListener {
-            updateUserData()
+//        binding.saveInfo.setOnClickListener {
+//            updateUserData()
+//        }
+        binding.backBtn.setOnClickListener {
+            finish()
         }
 
         auth = FirebaseAuth.getInstance()
-database = FirebaseDatabase.getInstance()
+        database = FirebaseDatabase.getInstance()
         adminReference = database.reference.child("user")
 
 
-        binding.saveInfo.isEnabled = false
+//        binding.saveInfo.isEnabled = false
 
-        retrieveUserData()
+//        retrieveUserData()
     }
 
     private fun updateUserData() {
@@ -50,7 +53,7 @@ database = FirebaseDatabase.getInstance()
        var updatePhone =  binding.phoneNo.text.toString()
         val currentuserUid = auth.currentUser?.uid
         if(currentuserUid != null){
-            val userReference =  adminReference.child(currentuserUid)
+            val userReference =  adminReference.child(currentuserUid!!)
             userReference.child("name").setValue(updateName)
             userReference.child("email").setValue(updateEmail)
             userReference.child("password").setValue(updatePassword)
@@ -97,9 +100,9 @@ database = FirebaseDatabase.getInstance()
     }
 
     private fun setDataToTextView(
-        ownerName: Any?,
+        ownerName: Any? ,
         email: Any?,
-        password: Any?,
+        password: Any? ,
         address: Any?,
         phone: Any?
     ) {
